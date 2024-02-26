@@ -1,5 +1,5 @@
 ## `addLiquidity` 
 
-![addLiquidity Function](images\addLiquidity.png)
+![addLiquidity Function](images/addLiquidity.png)
 
 ##
