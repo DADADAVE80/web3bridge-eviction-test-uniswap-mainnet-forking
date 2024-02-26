@@ -51,7 +51,7 @@ const main = async () => {
     );
 
     await addLiqudityTx.wait();
-    console.log(addLiqudityTx);
+    // console.log(addLiqudityTx);
 
     const USDTBalAfter = await USDT.balanceOf(impersonatedSigner.address);
     const DAIBalAfter = await DAI.balanceOf(impersonatedSigner.address);
@@ -66,7 +66,7 @@ const main = async () => {
     const removeLiquidityTx = await UniSwapROUTER.connect(impersonatedSigner).removeLiquidity(
         USDTAddress,
         DAIAddress,
-        3000e12,
+        ethers.parseEther("9999999999999999999999999999999"),
         0,
         0,
         impersonatedSigner.address,

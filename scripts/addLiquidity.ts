@@ -14,7 +14,7 @@ const main = async () => {
 
     const USDT = await ethers.getContractAt("IERC20", USDTAddress);
     const DAI = await ethers.getContractAt("IERC20", DAIAddress);
-    const WETH = await ethers.getContractAt("IERC20", WETHAddress);
+    const WETH = await ethers.getContractAt("IERC20", WETHAddress); 
 
     const UNIRouter = await ethers.getContractAt("IUniswap", UniSwap);
 
@@ -29,11 +29,11 @@ const main = async () => {
     const deadline = Math.floor(Date.now() / 1000) + (60 * 10);
 
     // const prevContractBalance = await
-    const USDCBalBefore = await USDT.balanceOf(impersonatedSigner.address);
+    const USDTBalBefore = await USDT.balanceOf(impersonatedSigner.address);
     const DAIBalBefore = await DAI.balanceOf(impersonatedSigner.address);
     const WETHBalBefore = await WETH.balanceOf(impersonatedSigner.address);
 
-    console.log("USDT Balance Before Liq:", ethers.formatUnits(USDCBalBefore, 6));
+    console.log("USDT Balance Before Liq:", ethers.formatUnits(USDTBalBefore, 6));
     console.log("DAI Balance Before Liq:", ethers.formatUnits(DAIBalBefore, 18));
     console.log("WETH Balance Before Liq:", ethers.formatUnits(WETHBalBefore, 18));
     console.log("---------------------------------------------------------");

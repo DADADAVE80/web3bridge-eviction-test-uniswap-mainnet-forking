@@ -2,6 +2,6 @@
 
 ![addLiquidity Function](images/addLiquidity.png)
 
-## `removeLiquidity`
+## `addLiquidityETH`
 
-![removeLiquidity](images/addLiquidity.png)
+![addLiquidityETH](images/addLiquidityETH.png)
