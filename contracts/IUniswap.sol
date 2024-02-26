@@ -6,12 +6,6 @@ interface IUniswap {
 
     function WETH() external pure returns (address);
 
-    function quote(
-        uint amountA,
-        uint reserveA,
-        uint reserveB
-    ) internal pure returns (uint amountB);
-
     function swapExactTokensForTokens(
         uint amountIn,
         uint amountOutMin,

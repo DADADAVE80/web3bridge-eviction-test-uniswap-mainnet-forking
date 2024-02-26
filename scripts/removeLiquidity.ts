@@ -60,6 +60,10 @@ const main = async () => {
     console.log("DAI Balance After Liq:", ethers.formatUnits(DAIBalAfter, 18));
     console.log("WETH Balance After Liq:", ethers.formatUnits(WETHBalAfter, 18));
 
+    ///Remove the liquidity added
+
+    const liquidity = await addLiqudityTx;
+
     const approveTx3 = await USDT.connect(impersonatedSigner).approve(impersonatedSigner, amountADesired);
     await approveTx3.wait();
 
@@ -67,18 +71,18 @@ const main = async () => {
     await approveTx4.wait();
 
     const removeLiquidityTx = await ROUTER.connect(impersonatedSigner).removeLiquidity(
-        USDCAddress,
+        USDTAddress,
         DAIAddress,
         liquidity,
         amountAMin,
         amountBMin,
-        culprit,
+        impersonatedSigner,
         deadline
     );
 
     await removeLiquidityTx.wait();
 
-    const USDCBalRm = await USDC.balanceOf(impersonatedSigner.address);
+    const USDCBalRm = await USDT.balanceOf(impersonatedSigner.address);
     const DAIBalRm = await DAI.balanceOf(impersonatedSigner.address);
     const WETHBalRm = await WETH.balanceOf(impersonatedSigner.address);
 
